@@ -55,15 +55,17 @@ sudo apt-get install -y unzip \
 	pkg-config \ 
 	build-essential
 
-git clone https://github.com/opencv/opencv.git
-git clone https://github.com/opencv/opencv_contrib.git
+# git clone https://github.com/opencv/opencv.git
+# git clone https://github.com/opencv/opencv_contrib.git
+wget https://github.com/opencv/opencv/archive/refs/tags/4.5.2.zip
+wget https://github.com/opencv/opencv_contrib/archive/refs/tags/4.5.2.zip
 
 python3 -m venv opencv4
 source opencv4/bin/activate
 pip install wheel
 pip install numpy
 
-cd opencv && mkdir build && cd build
+cd opencv-4.5.2 && mkdir build && cd build
 
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D CMAKE_INSTALL_PREFIX=/usr/local \
